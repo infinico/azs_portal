@@ -1,0 +1,241 @@
+#eventTable{
+    width: 1000px;  
+    height: 800px;
+    margin: auto;
+}
+
+.eventRow{
+    width: 10px;
+    height: 50px; 
+    text-align: center;
+}
+
+.days, .event, .today{
+    vertical-align: top; 
+    width: 150px;
+}
+
+.eventRow input{
+    width: 150px;
+    height: 50px; 
+    
+}
+
+.requestData{
+    font-size: 11pt;   
+}
+
+body {
+    background-color: #e4e4e4;
+}
+
+.forget_username_password {
+    text-align: right;   
+}
+li {
+    list-style-type: none;  
+}
+
+h1 {
+    font-size: 18pt !important; 
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 16pt !important;
+}
+   
+button a {
+    color: black;   
+    font-weight: normal;
+    display: inline-block;
+}
+
+button a:hover {
+    color: black;   
+}
+
+.login_form {
+    margin-top: -40px;
+    text-align: right;
+}
+
+.request_list_table {
+    font-size: 12pt; 
+}
+
+.request_list_table a {
+    color: white !important;
+    font-weight: normal;
+}
+
+.request_review {
+    font-size: 12pt !important;   
+}
+
+.error {
+    font-size: 10pt;
+    color: red;  
+    font-weight: bold;
+}
+
+.error_recover {
+    color: red;  
+    font-weight: bold;
+}
+
+.day_request, .recover_form {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+textarea {
+    width: 80% !important;   
+}
+
+.row {
+    margin-bottom: 9px !important;
+}
+
+h1 {
+    font-size: 19pt;   
+}
+
+p {
+    font-size: 12pt;   
+}
+
+
+.form_span {
+    font-size: 12pt;
+    font-weight: bold;
+}
+.infini-logo, .fedex-logo {
+    width: 300px !important;
+}
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #663096;
+}
+
+a:hover {
+    color: green; 
+    text-decoration: none;
+}
+
+#wrapper {
+    width: 100%; 
+}
+
+#content {
+    padding: 15px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    background-color: #F7F7F7; 
+    border: 1px solid black;
+    color: black;
+    font-size: 15pt;
+	width: 100%;
+}
+
+.note {
+    font-size: 11pt;
+    width: 100% !important;
+    display: inline-block;
+}
+/* Navigation Style with customized bootstrap CSS */
+.navbar {
+    background-color: #F7F7F7;
+    margin-top: 1%;
+}
+
+.navbar a {
+    font-size: 11pt; 
+    color: black !important;
+}
+
+.navbar a:hover {
+    background-color: #D3D3D3 !important;   
+}
+/* ------------------------------- Footer ------------------------------- */
+footer {
+    color: #999;
+}
+
+footer .row {
+    text-align: center;   
+}
+
+.copyright, .owned, .policy {
+    font-size: 12pt;   
+}
+/* ------------------------------- Footer // ------------------------------- */
+
+
+/*-------------------------------- Logged_in ---------------------------------*/
+
+#logged_in_box{
+    float: right;
+    margin-top: -150px;
+}
+
+#hello{
+    margin-left: 40px;   
+}
+
+.logged_in_btn{
+    line-height: 40px !important;   
+}
+
+
+/*---------------------------------- Logged_in // -----------------------------*/
+
+/* CSS media query within a stylesheet */
+@media (max-width: 767px) {
+    .login_form {
+        margin-top: 0;
+        text-align: right;
+    }
+    
+    .forget_username_password {
+        text-align: center;   
+    }
+    
+    textarea {
+        width: 100% !important;   
+    }
+}
+
+@media (max-width: 600px) {
+    #logged_in_box{
+        float: none;
+        margin-top: 20px;   
+    }
+    
+    #status_logged_in{
+        margin: 0;
+        margin-left: 125px;
+    }
+    
+    #logged_in_box li{
+        display: inline-block;
+    }
+    
+    #hello{
+        margin-bottom: -30px;   
+    }
+}
+
+@media (max-width: 400px) {
+    
+    #status_logged_in{
+        margin: 0;
+        
+    }
+    
+    #hello{
+        margin: 0;
+        text-align: center;
+    }
+}
