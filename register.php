@@ -11,8 +11,8 @@
 
             $dobInput = multiexplode(array("-", "/"), $dob);
             $date_of_birth = $dobInput[2] . "-" . $dobInput[0] . "-" . $dobInput[1];
-            echo $ssn;
-            echo $date_of_birth;
+            //echo $ssn;
+            //echo $date_of_birth;
         }
         
         if(empty($_POST["ssn_digits"]) || empty($_POST["dob"])) {

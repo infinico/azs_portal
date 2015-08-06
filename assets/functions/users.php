@@ -177,4 +177,73 @@
         }
         mysqli_query($link, "UPDATE employee SET " . implode(", ", $update) . " WHERE azs_employee_id = '$user_id'") or die(mysqli_error($link));
     }
+
+
+
+function requestEmail($email, $firstname, $lastname, $bodyMessage, $subjectHeader){
+    global $COOP1Email, $COOP1Name, $COOP2Email, $COOP2Name, $SupervisorCOOPEmail, $SupervisorName;
+    $receiver = new PHPMailer;
+        
+    $receiver->SMTPAuth = true;
+
+    $receiver->Host = 'stmp.gmail.com';
+    $receiver->Username = 'convoportal@gmail.com';
+    $receiver->Password = 'ConvoPortal#1!';
+    $receiver->STMPSecure = 'ssl';
+    $receiver->Port = 465;
+
+    $receiver->From = $email;
+    $receiver->FromName = $firstname . " " . $lastname;
+    $receiver->AddAddress('pxy9548@rit.edu', 'Peter Yeung');
+    $receiver->AddCC($COOP1Email, $COOP1Name);
+    $receiver->AddCC($COOP2Email, $COOP2Name);
+    $receiver->AddCC($SupervisorCOOPEmail, $SupervisorName);
+
+    $message2 = "<p>Hello HR,</p>";
+    $message2 .= $bodyMessage;
+    $message2 .= "<p>" . $firstname . " " . $lastname . "</p>";
+
+    if($_ENV["HOSTNAME"] = "TESTING"){
+        $subject2 = 'AZS - ' . $subjectHeader . ' TESTING'; 
+    }
+    else if($_ENV["HOSTNAME"] = "DEVELOPING"){
+        $subject2 = 'AZS - ' . $subjectHeader . ' DEVELOPING'; 
+    }
+
+
+    $receiver->Subject = $subject2;
+    $receiver->Body = $message2;
+    $receiver->AltBody = $bodyMessage;
+
+    $receiver->send();
+
+}
+
+
+
+function has_access_manager($job_code) {
+    global $link;
+    $job_code = $job_code;    
+    $query = mysqli_query($link, "SELECT job_code FROM position WHERE job_code = '$job_code' AND manager_privilege = '1'");
+    if(mysqli_num_rows($query) > 0 ) {
+        return true;   
+    }
+    else {
+        return false;   
+    }
+}
+
+function test_employee_id($employeeID){
+    global $link;
+    $query = mysqli_query($link, "SELECT * FROM employee WHERE employee_id = '$employeeID'");
+    if(mysqli_num_rows($query) > 0 ) {
+        return true;   
+    }
+    else {
+        return false;   
+    }
+}
+
+
+
 ?>

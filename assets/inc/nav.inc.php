@@ -17,8 +17,14 @@
 ?>
                                 <li><a href="day_request.php">Day Off Request</a></li>
                                 <li><a href="calendar.php">Calendar</a></li>
-                                <li><a href="request_list.php">Request List</a></li>
 <?php
+        if(has_access_manager($user_data["job_code"]) == true){
+        ?>
+                                <li><a href="request_list.php">Request List</a></li>
+                                <li><a href="employee.php">Employees</a></li>
+                                
+<?php
+        }
     }
 ?>
                             </ul>   <!-- End of nav navbar-nav -->

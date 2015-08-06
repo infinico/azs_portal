@@ -1,10 +1,13 @@
 <?php 
     $title = "Request Review";
     include("assets/inc/header.inc.php");
-    $request_id = $_GET["request_id"];
-    protect_page();
-
     
+    protect_page();
+    if(logged_in() == true){
+        manager_protect();
+    }
+
+    $request_id = $_GET["request_id"];
     $query = mysqli_query($link, "SELECT * FROM request_vw WHERE request_id=$request_id");
     while($row = mysqli_fetch_assoc($query)) {
         $request_id = $row["request_id"];
@@ -14,40 +17,47 @@
         $date2 = $row["second_date"];
         $date3 = $row["third_date"];
         $date4 = $row["fourth_date"];
+        $date5 = $row["fifth_date"];
         $reason = $row["reason"];
     }
 
     if(isset($_POST['submit'])){
         
-        $approved_date1 = $approved_date2 = $approved_date3 = $approved_date4 = "";
+        $approved_date1 = $approved_date2 = $approved_date3 = $approved_date4 = $approved_date5 = "";
         //echo "Success";
         if(isset($_POST['date1'])){
             $approved_date1 = $_POST['date1'];
         }
         else{
-            $approved_date1 = "1901-01-01";
+            $approved_date1 = "1969-01-01";
         }
         if(isset($_POST['date2'])){
             $approved_date2 = $_POST['date2'];
         }
         else{
-            $approved_date2 = "1901-01-01";
+            $approved_date2 = "1969-01-01";
         }
         if(isset($_POST['date3'])){
             $approved_date3 = $_POST['date3'];
         }
         else{
-            $approved_date3 = "1901-01-01";
+            $approved_date3 = "1969-01-01";
         }
         if(isset($_POST['date4'])){
             $approved_date4 = $_POST['date4'];
         }
         else{
-            $approved_date4 = "1901-01-01";
+            $approved_date4 = "1969-01-01";
+        }
+        if(isset($_POST['date5'])){
+            $approved_date5 = $_POST['date5'];
+        }
+        else{
+            $approved_date5 = "1969-01-01";
         }
         
-        mysqli_query($link, "CALL insert_approved_request('$request_id', '$approved_date1', '$approved_date2', '$approved_date3', '$approved_date4', '$reason')");
-        mysqli_query($link, "CALL update_request('$request_id')");
+        mysqli_query($link, "CALL insert_approved_request('$request_id', '$approved_date1', '$approved_date2', '$approved_date3', '$approved_date4', '$approved_date5', '$reason')");
+        mysqli_query($link, "CALL update_request('$request_id', 'Reviewed')");
         
         //echo "INSERT INTO approved(request_id, date1, date2, date3, date4) VALUES('$request_id', '$approved_date1', '$approved_date2', '$approved_date3', '$approved_date4')";
         //echo "UPDATE request SET status = 'Reviewed' WHERE request_id = '$request_id'";
@@ -94,6 +104,12 @@
     }
     else {
         echo "<input type='checkbox' name='date4' value='" . $date4 . "'> " . date('l, F d, Y', strtotime($date4)) . "<br/>";
+    }
+    if($date5 == "1969-01-01") {
+
+    }
+    else {
+        echo "<input type='checkbox' name='date5' value='" . $date5 . "'> " . date('l, F d, Y', strtotime($date5)) . "<br/>";
     }
 ?>
                             

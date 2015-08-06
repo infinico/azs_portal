@@ -1,6 +1,6 @@
 <!--
 Infini Consulting
-Fedex Portal v1.5
+AZS Portal v1.0
 Copyright 2015
 -->
 
@@ -18,29 +18,41 @@ Copyright 2015
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noindex">
         
+       
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/dataTables.responsive.css">
+        
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         
         <!-- Credits by jonthornton for Datepicker design and Timepicker-->
         <link rel="stylesheet" type="text/css" href="assets/css/jquery.timepicker.css" /> 
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.css" />
     
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!--<link rel="stylesheet" type="text/css" href="assets/css/table.css">-->
+        
+    
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="assets/js/script.js"></script>
         
          <!-- Credits by jonthornton for Datepicker design and Timepicker-->
-        <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.timepicker.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="assets/js/script.js"></script>
+        
+        <!-- DATA TABLES -->
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/responsive/1.0.6/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
     </head> <!-- Head ends -->
     <body>    <!-- Body -->
         <div class="container"> <!-- div of the container --> 
             <div class="infini-logo">
-                <a href="https://www.theinfini.com" target="_blank"><img class ="img-responsive" src="assets/images/infini.svg" alt="Infini" width="250"/></a>
+                <a href="https://www.theinfini.com" target="_blank"><img class ="img-responsive" src="assets/images/infini.svg" alt="Infini" width="200"/></a>
             </div>         
 <?php
     if(logged_in() === true) {
@@ -66,5 +78,5 @@ include("assets/inc/nav.inc.php");
         <div id="wrapper">  <!-- Wrapper starts -->
             <div id="content">  <!-- Content starts -->
                 <div class="fedex-logo">
-                <a href="#"><img class ="img-responsive" src="assets/images/fedex.png" alt="Fedex" width="250"/></a>
+                <a href="<?php echo $linkToALL . "/index.php"; ?>"><img class ="img-responsive" src="assets/images/fedex.png" alt="Fedex" width="250"/></a>
             </div>

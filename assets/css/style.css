@@ -1,3 +1,16 @@
+.table-responsive {
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 12pt;
+}
+
+#example {
+    font-size: 12pt;   
+}
+
 #eventTable{
     width: 1000px;  
     height: 800px;
@@ -13,6 +26,10 @@
 .days, .event, .today{
     vertical-align: top; 
     width: 150px;
+}
+
+.today {
+    background-color: #00CC00;   
 }
 
 .eventRow input{
@@ -65,8 +82,9 @@ button a:hover {
 }
 
 .request_list_table a {
-    color: white !important;
-    font-weight: normal;
+    font-weight: bold;
+    text-decoration: none;
+    color: #663096;
 }
 
 .request_review {
@@ -113,6 +131,7 @@ p {
 .infini-logo, .fedex-logo {
     width: 300px !important;
 }
+
 a {
     font-weight: bold;
     text-decoration: none;

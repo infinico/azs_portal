@@ -1,9 +1,22 @@
 <?php
-/*
-    $_ENV["HOSTNAME"] = "DEVELOPING";
-    $linkToALL = "/convo";  
-    $root = $_SERVER["DOCUMENT_ROOT"] . "/";
+    /* Environment Variables */
+    $_ENV["HOSTNAME"] = "TESTING";
+    $linkToALL = "https://test.theinfini.com/azs";  
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+    /* 
+        INCOMING CO-OP STUDENT INFORMATION:
+        Please change the email address and name for testing.
+        The variables are used for email functions (PHPMailer)
+        If you have any questions, you can contact Chris at chris@theinfini.com 
     */
+    $COOP1Email = 'jja4740@rit.edu';
+    $COOP1Name = 'Joshua Aziz';
+    $COOP2Email = 'pxy9548@rit.edu';
+    $COOP2Name = 'Peter Yeung';
+    $SupervisorCOOPEmail = 'chris@theinfini.com';
+    $SupervisorName = 'Chris Campbell';
+
 
     session_start();
  

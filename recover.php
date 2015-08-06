@@ -1,7 +1,12 @@
 <?php
-    $page_title = "Recover";
     $title = "Recover";
+    $page_title = "Recover";
+
+    ob_start();
+    require_once "includes/phpmailer/vendor/autoload.php";
+    require("includes/phpmailer/libs/PHPMailer/class.phpmailer.php");
 	include("assets/inc/header.inc.php");
+
     logged_in_redirect();
 
     if(isset($_GET["success"]) !== true) {
@@ -16,12 +21,16 @@
     }
 	if(isset($_GET["success"]) === true && empty($_GET["success"]) === true) {
 ?>
-	<h2>You will recieve an email you requested shortly!</h2>
+	<h2>Please check your email, thank you.</h2>
 <?php
 	}
 	else {
 		$mode_allowed = array("username", "password");
-
+        if(isset($_POST["submit"])) {
+            if(empty($_POST["email"])) {
+                echo "<p class='error_recover'>Please type the email address.</p>";   
+            }   
+        }
 		if(isset($_GET["mode"]) === true && in_array($_GET["mode"], $mode_allowed)) {
 			if(isset($_POST["email"]) === true && empty($_POST["email"]) === false) {
 				if(email_exists($_POST["email"]) === true) {
@@ -42,7 +51,7 @@
                         <input type="text" class="form-control" name="email">
                     </div>
                 </div>
-				<input type="submit" class="btn btn-default" value="Recover">
+				<input type="submit" name="submit" class="btn btn-default" value="Recover">
             </div>
 		</form>
 	<?php 

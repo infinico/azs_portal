@@ -8,6 +8,15 @@
         }
     }
 
+    // Manager Protect Page
+    function manager_protect(){
+        global $user_data;
+        if(has_access_manager($user_data["job_code"]) === false){
+            header("Location: index.php");
+            exit();
+        }
+    }
+
     // Protect Page
     function protect_page() {
         if(logged_in() === false) {
