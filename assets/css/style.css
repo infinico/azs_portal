@@ -1,8 +1,4 @@
 .table-responsive {
-    white-space: nowrap;
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-x: hidden;
     overflow-y: hidden;
     font-size: 12pt;
 }
@@ -16,6 +12,28 @@
     height: 800px;
     margin: auto;
 }
+
+
+/* CONTACT PAGE */
+.contact, .contact_info {
+    margin-left: 0px;
+    display: inline-block;
+}
+
+.container{
+    width: 1000px;
+}
+
+form.well.span8{
+    width: 900px;
+}
+
+.contact_info {
+    position: absolute;
+    margin-left: -200px;
+    font-size: 13pt;    
+}
+
 
 .eventRow{
     width: 10px;
@@ -43,6 +61,8 @@
 }
 
 body {
+    font-family: Arial;
+    font-size: 0.8em;
     background-color: #e4e4e4;
 }
 
@@ -73,9 +93,11 @@ button a:hover {
 }
 
 .login_form {
-    margin-top: -40px;
+    margin-top: 70px;
     text-align: right;
 }
+
+
 
 .request_list_table {
     font-size: 12pt; 
@@ -154,7 +176,7 @@ a:hover {
     background-color: #F7F7F7; 
     border: 1px solid black;
     color: black;
-    font-size: 15pt;
+    font-size: 12pt;
 	width: 100%;
 }
 
@@ -189,7 +211,11 @@ footer .row {
 .copyright, .owned, .policy {
     font-size: 12pt;   
 }
-/* ------------------------------- Footer // ------------------------------- */
+
+#policyFooter {
+    float: right;
+    margin-right: 10px;
+}
 
 
 /*-------------------------------- Logged_in ---------------------------------*/
@@ -205,6 +231,10 @@ footer .row {
 
 .logged_in_btn{
     line-height: 40px !important;   
+}
+
+#loginBox{
+margin-left: 900px;
 }
 
 
@@ -224,6 +254,11 @@ footer .row {
     textarea {
         width: 100% !important;   
     }
+    
+    #loginBox{
+        margin-left: 20px;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -231,6 +266,8 @@ footer .row {
         float: none;
         margin-top: 20px;   
     }
+    
+
     
     #status_logged_in{
         margin: 0;
@@ -258,3 +295,4 @@ footer .row {
         text-align: center;
     }
 }
+
